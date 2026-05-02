@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshiraja | Worldbuilding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="./fonts/HelloImperfectRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="worldbuilding-page">
+    <div class="page-wipe" id="page-wipe" aria-hidden="true"></div>
+
+    <main class="worldbuilding-page-main">
+        <div class="side-scroller-wrap" aria-hidden="true">
+            <img src="./assets/ui/side scroller.png" alt="" class="side-scroller">
+        </div>
+        <div class="side-menu-overlay" aria-hidden="true">
+            <a href="./index.html#landing" class="slot-label slot-link" data-nav="home">Home</a>
+            <a href="./index.html#about" class="slot-label slot-link" data-nav="about">About</a>
+            <a href="./works.html" class="slot-label slot-link active" data-nav="works">Work</a>
+            <a href="mailto:hello@kshiraja.com" class="slot-label slot-link">Contact</a>
+        </div>
+
+        <section class="worldbuilding-section" id="worldbuilding">
+            <div class="worldbuilding-wipe" aria-hidden="true"></div>
+            
+            <header class="worldbuilding-header reveal-worldbuilding" style="opacity: 1; transform: translateY(0);">
+                <nav class="category-nav reveal-worldbuilding" style="opacity: 1; transform: translateY(0);">
+                    <span class="category-item active">character</span>
+                    <a href="./concept.html" class="category-item">concept</a>
+                    <a href="./animation.html" class="category-item">animatic</a>
+                </nav>
+                
+                                <h1 class="worldbuilding-title">CHARACTER DESIGN</h1>
+            </header>
+
+            <div class="worldbuilding-content">
+                <div class="character-description reveal-worldbuilding" style="opacity: 1; transform: translateY(0);">
+                    <p>Raju, 36, is a self-proclaimed "retired" wellness enthusiast living off his son's Twitch earnings. Constantly drifting through spiritual phases, he ends up with an unlikely flamingo companion who quietly judges his lifestyle. The project follows their odd dynamic, blending humour with themes of escapism, self-delusion, and the search for balance.</p>
+                </div>
+
+                <div class="character-gallery reveal-worldbuilding">
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/action poses.jpg" alt="Action poses">
+                        <p>Action Poses</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/final turnaround.jpg" alt="Final turnaround">
+                        <p>Final Turnaround</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/expression sheet.jpg" alt="Expression sheet">
+                        <p>Expression Sheet</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/action poses flamingo.jpg" alt="Action poses flamingo">
+                        <p>Flamingo Poses</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/flamingo turnaround.jpg" alt="Flamingo turnaround">
+                        <p>Flamingo Turnaround</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/flamingo expressions.jpg" alt="Flamingo expressions">
+                        <p>Flamingo Expressions</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/works/character design/poster.jpg" alt="Character poster">
+                        <p>Poster</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <section class="contact-section" id="contact">
+            <div class="contact-content">
+                <div class="contact-header">
+                    <h2 class="contact-title">lets collaborate on something fun, meaningful and creative :)</h2>
+                </div>
+                <div class="contact-links">
+                    <a href="https://instagram.com/kiasartchive" target="_blank" class="contact-link" title="Instagram">
+                        <span>Instagram @kiasartchive</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kshiraja-ragothaman-50905a3a9/" target="_blank" class="contact-link" title="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:kshiraja.ragoth@gmail.com" class="contact-link" title="Email">
+                        <span>kshiraja.ragoth@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        // Debug: Check if elements exist
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Worldbuilding page loaded");
+            
+            // Make elements visible immediately as fallback
+            const revealElements = document.querySelectorAll(".reveal-worldbuilding");
+            revealElements.forEach(el => {
+                el.classList.add("is-visible");
+                console.log("Made element visible:", el.className);
+            });
+        });
+    </script>
+    <script src="worldbuilding.js"></script>
+</body>
+</html>

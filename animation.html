@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshiraja | Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="./fonts/HelloImperfectRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="animation-page">
+    <div class="page-wipe" id="page-wipe" aria-hidden="true"></div>
+
+    <main class="animation-page-main">
+        <div class="side-scroller-wrap" aria-hidden="true">
+            <img src="./assets/ui/side scroller.png" alt="" class="side-scroller">
+        </div>
+        <div class="side-menu-overlay" aria-hidden="true">
+            <a href="./index.html#landing" class="slot-label slot-link" data-nav="home">Home</a>
+            <a href="./index.html#about" class="slot-label slot-link" data-nav="about">About</a>
+            <a href="./works.html" class="slot-label slot-link active" data-nav="works">Work</a>
+            <a href="mailto:hello@kshiraja.com" class="slot-label slot-link">Contact</a>
+        </div>
+
+        <section class="animation-section" id="animation">
+            <div class="animation-wipe" aria-hidden="true"></div>
+            
+            <header class="animation-header reveal-animation" style="opacity: 1; transform: translateY(0);">
+                <nav class="category-nav reveal-animation" style="opacity: 1; transform: translateY(0);">
+                    <a href="./worldbuilding.html" class="category-item">character</a>
+                    <a href="./concept.html" class="category-item">concept</a>
+                    <span class="category-item active">animation</span>
+                </nav>
+                
+                                <h1 class="animation-title">ANIMATIC</h1>
+            </header>
+
+            <div class="animation-content">
+                <div class="animation-description reveal-animation" style="opacity: 1; transform: translateY(0);">
+                    <p>Traces of the Past, Tides of the Future is an animatic about the commodification of culture, told through a personal, slightly fragmented story. It follows Maria, a young Goan gift-shop owner, whose normal day slowly shifts as she experiences two versions of Goa, what it was and what it is becoming. Through this, she begins to see what tourism has changed and what it has taken. The project looks at that tension and what it means to hold on to something that is slowly being reshaped.</p>
+                </div>
+
+                <div class="animation-video reveal-animation">
+                    <div class="video-container">
+                        <video controls class="animation-video-player" preload="metadata">
+                            <source src="./assets/works/pou goa/traces of the past, tides of the future.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        // Debug: Check if elements exist
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Animation page loaded");
+            
+            // Make elements visible immediately as fallback
+            const revealElements = document.querySelectorAll(".reveal-animation");
+            revealElements.forEach(el => {
+                el.classList.add("is-visible");
+                console.log("Made element visible:", el.className);
+            });
+        });
+    </script>
+    <script src="animation.js"></script>
+</body>
+</html>

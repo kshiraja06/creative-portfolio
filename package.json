@@ -1,0 +1,16 @@
+{
+  "name": "kam-portfolio",
+  "version": "1.0.0",
+  "description": "KAM - 2D Artist Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Build complete - static files ready'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["portfolio", "artist", "2d-art", "animation", "game-art"],
+  "author": "KAM",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
