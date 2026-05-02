@@ -2,7 +2,55 @@ document.addEventListener("DOMContentLoaded", () => {
     setupPageEntryTransition();
     setupIllustrationsIntro();
     setupWipeNavigation();
+    preloadImages();
 });
+
+// Image preloading system
+const imageCache = new Map();
+
+function preloadImages() {
+    const criticalImages = [
+        './assets/works/personal/blue.jpg',
+        './assets/works/personal/zuko.jpg',
+        './assets/works/personal/earring.jpg',
+        './assets/works/personal/horror poster.jpg',
+        './assets/works/personal/car poster.jpg',
+        './assets/works/personal/vent.jpg',
+        './assets/works/personal/gartic dosts 2.png'
+    ];
+
+    // Preload first 3 images immediately (above the fold)
+    const immediatePreload = criticalImages.slice(0, 3);
+    immediatePreload.forEach(src => {
+        if (!imageCache.has(src)) {
+            const img = new Image();
+            img.onload = () => {
+                imageCache.set(src, img);
+                console.log(`Immediate preload: ${src}`);
+            };
+            img.src = src;
+        }
+    });
+
+    // Preload remaining images with slight delay
+    setTimeout(() => {
+        const delayedPreload = criticalImages.slice(3);
+        delayedPreload.forEach(src => {
+            if (!imageCache.has(src)) {
+                const img = new Image();
+                img.onload = () => {
+                    imageCache.set(src, img);
+                    console.log(`Delayed preload: ${src}`);
+                };
+                img.src = src;
+            }
+        });
+    }, 1000);
+}
+
+function getCachedImage(src) {
+    return imageCache.get(src);
+}
 
 function setupPageEntryTransition() {
     const wipe = document.getElementById("page-wipe");

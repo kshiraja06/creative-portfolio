@@ -2,7 +2,42 @@ document.addEventListener("DOMContentLoaded", () => {
     setupPageEntryTransition();
     setupWorldbuildingIntro();
     setupWipeNavigation();
+    preloadImages();
 });
+
+// Image preloading system
+const imageCache = new Map();
+
+function preloadImages() {
+    const criticalImages = [
+        './assets/works/character design/action poses.jpg',
+        './assets/works/character design/final turnaround.jpg',
+        './assets/works/character design/expression sheet.jpg',
+        './assets/works/character design/action poses flamingo.jpg',
+        './assets/works/character design/flamingo turnaround.jpg',
+        './assets/works/character design/flamingo expressions.jpg',
+        './assets/works/character design/poster.jpg'
+    ];
+
+    // Preload all images in parallel
+    criticalImages.forEach(src => {
+        if (!imageCache.has(src)) {
+            const img = new Image();
+            img.onload = () => {
+                imageCache.set(src, img);
+                console.log(`Preloaded: ${src}`);
+            };
+            img.onerror = () => {
+                console.error(`Failed to preload: ${src}`);
+            };
+            img.src = src;
+        }
+    });
+}
+
+function getCachedImage(src) {
+    return imageCache.get(src);
+}
 
 function setupPageEntryTransition() {
     const wipe = document.getElementById("page-wipe");

@@ -2,7 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
     setupPageEntryTransition();
     setupConceptIntro();
     setupWipeNavigation();
+    preloadImages();
 });
+
+// Image preloading system
+const imageCache = new Map();
+
+function preloadImages() {
+    const criticalImages = [
+        './assets/works/concept art/city.jpg',
+        './assets/works/concept art/heaven.jpg',
+        './assets/works/concept art/take 3.jpg'
+    ];
+
+    // Preload all images in parallel
+    criticalImages.forEach(src => {
+        if (!imageCache.has(src)) {
+            const img = new Image();
+            img.onload = () => {
+                imageCache.set(src, img);
+                console.log(`Preloaded: ${src}`);
+            };
+            img.onerror = () => {
+                console.error(`Failed to preload: ${src}`);
+            };
+            img.src = src;
+        }
+    });
+}
+
+function getCachedImage(src) {
+    return imageCache.get(src);
+}
 
 function setupPageEntryTransition() {
     const wipe = document.getElementById("page-wipe");
