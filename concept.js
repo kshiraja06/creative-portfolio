@@ -24,13 +24,9 @@ function setupConceptIntro() {
         return;
     }
 
-    // Make all elements visible simultaneously after page transition
-    gsap.delayedCall(0.2, () => {
-        gsap.to(".side-scroller-wrap, .slot-label, .category-nav, .concept-title, .concept-description, .concept-gallery .gallery-item", {
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out"
-        });
+    // Make elements visible immediately for better performance
+    gsap.set(".side-scroller-wrap, .slot-label, .concept-title, .concept-gallery", {
+        opacity: 1
     });
 
     // Add click-to-enlarge functionality
