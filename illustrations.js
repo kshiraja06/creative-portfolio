@@ -52,6 +52,7 @@ function getCachedImage(src) {
     return imageCache.get(src);
 }
 
+
 function setupPageEntryTransition() {
     const wipe = document.getElementById("page-wipe");
     if (!wipe || typeof gsap === "undefined") {
