@@ -153,6 +153,7 @@
                     x: x,
                     y: y,
                     scale: 0.9,
+                    scaleX: -1, // Horizontal flip to fix mirror orientation
                     transformOrigin: "center center",
                     cursor: "pointer"
                 });
@@ -167,22 +168,20 @@
             cardsExpanded = true;
             const cards = document.querySelectorAll('.card-back');
             
+            // Swap to front image immediately
             cards.forEach((card, index) => {
+                card.src = `./assets/works/graphic design/front ${index + 1}.png`;
+                card.dataset.flipped = 'true';
+                
                 // Animate to horizontal layout showing front
                 gsap.to(card, {
                     rotation: 0,
-                    x: index * 350 - 525, // Wider horizontal layout for even bigger cards
+                    x: index * 280 - 420, // Keep cards closer together
                     y: 0,
                     scale: 1,
+                    scaleX: -1, // Maintain horizontal flip
                     duration: 1.0,
-                    ease: "none", // Linear timing for smooth animation
-                    onUpdate: function() {
-                        // Swap to front image smoothly during animation
-                        if (this.progress() > 0.3 && !card.dataset.flipped) {
-                            card.dataset.flipped = 'true';
-                            card.src = `./assets/works/graphic design/front ${index + 1}.png`;
-                        }
-                    }
+                    ease: "none" // Linear timing for smooth animation
                 });
             });
         }
@@ -206,6 +205,7 @@
                     x: x,
                     y: y,
                     scale: 0.9,
+                    scaleX: -1, // Maintain horizontal flip
                     duration: 1.0,
                     ease: "none" // Linear timing for smooth animation
                 });

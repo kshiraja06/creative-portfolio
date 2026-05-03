@@ -1721,6 +1721,14 @@ main {
     min-height: 400px;
 }
 
+.cards-spread .card-back {
+    transform: scaleX(-1);
+}
+
+.cards-spread .card-back img {
+    transform: scaleX(-1);
+}
+
 .packaging-section {
     text-align: center;
     margin-bottom: 4rem;
