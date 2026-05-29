@@ -5,5 +5,15 @@
       "src": "**/*",
       "use": "@vercel/static"
     }
+  ],
+  "redirects": [
+    { "source": "/works.html", "destination": "/#works", "permanent": false },
+    { "source": "/worldbuilding.html", "destination": "/work/worldbuilding.html", "permanent": false },
+    { "source": "/concept.html", "destination": "/work/concept.html", "permanent": false },
+    { "source": "/animation.html", "destination": "/work/animation.html", "permanent": false },
+    { "source": "/visual-design.html", "destination": "/work/visual-design.html", "permanent": false },
+    { "source": "/graphic-design.html", "destination": "/work/graphic-design.html", "permanent": false },
+    { "source": "/illustrations.html", "destination": "/work/illustrations.html", "permanent": false },
+    { "source": "/interactions.html", "destination": "/work/interactions.html", "permanent": false }
   ]
 }
