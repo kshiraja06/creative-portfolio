@@ -6,21 +6,19 @@
     <title>Kshiraja | Concept Art</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="../fonts/HelloImperfectRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Copse:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="concept-page">
     <header class="site-header">
         <div class="site-header-inner">
-            <a href="../index.html#landing" class="site-brand site-brand-link">creative portfolio</a>
             <nav class="top-nav" aria-label="Primary">
                 <a href="../index.html#landing" class="nav-link" data-nav="home">home</a>
                 <a href="../index.html#about" class="nav-link" data-nav="about">about</a>
                 <a href="../index.html#works" class="nav-link active" data-nav="works">work</a>
-                <a href="../index.html#contact" class="nav-link" data-nav="contact">contact</a>
+                <a href="#contact" class="nav-link" data-nav="contact">contact</a>
             </nav>
-            <p class="site-location"><img src="../assets/ui/location.png" alt="" aria-hidden="true">bangalore, india</p>
+            <a href="../index.html#landing" class="site-brand site-brand-link">creative portfolio</a>
         </div>
     </header>
 
@@ -29,19 +27,19 @@
         <section class="concept-section" id="concept">
             <div class="concept-wipe" aria-hidden="true"></div>
             
-            <header class="concept-header reveal-concept" style="opacity: 1; transform: translateY(0);">
-                <nav class="category-nav reveal-concept" style="opacity: 1; transform: translateY(0);">
+            <header class="concept-header reveal-concept">
+                <nav class="category-nav reveal-concept">
                     <a href="worldbuilding.html" class="category-item">character</a>
                     <span class="category-item active">concept</span>
-                    <a href="animation.html" class="category-item">animatic</a>
+                    <a href="animatic.html" class="category-item">animatic</a>
                 </nav>
                 
                                 <h1 class="concept-title">CONCEPT ART</h1>
             </header>
 
             <div class="concept-content">
-                <div class="concept-description reveal-concept" style="opacity: 1; transform: translateY(0);">
-                    <p>In this world, places exist through belief, shaped by how often they are spoken about and remembered. After losing his younger brother in a raid, a boy carries the body with him, unable to let go. With no place for farewell, he begins to imagine one. As he travels and shares this idea, others add to it, and the place slowly takes form. By the end, it exists just enough for him to say goodbye.</p>
+                <div class="concept-description reveal-concept">
+                    <p>in this world, places exist through belief, shaped by how often they are spoken about and remembered. after losing his younger brother in a raid, a boy carries the body with him, unable to let go. with no place for farewell, he begins to imagine one. as he travels and shares this idea, others add to it, and the place slowly takes form. by the end, it exists just enough for him to say goodbye.</p>
                 </div>
 
                 <div class="concept-gallery reveal-concept">
@@ -60,10 +58,30 @@
                 </div>
             </div>
         </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-content">
+                <div class="contact-header">
+                    <h2 class="contact-title">lets collaborate on something fun, meaningful and creative :)</h2>
+                </div>
+                <div class="contact-links">
+                    <a href="https://instagram.com/kiasartchive" target="_blank" class="contact-link" title="Instagram">
+                        <span>Instagram @kiasartchive</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kshiraja-ragothaman-50905a3a9/" target="_blank" class="contact-link" title="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:kshiraja.ragoth@gmail.com" class="contact-link" title="Email">
+                        <span>kshiraja.ragoth@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/concept.js"></script>
 </body>

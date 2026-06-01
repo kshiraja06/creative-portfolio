@@ -6,8 +6,7 @@
     <title>Kshiraja | Illustrations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="../fonts/HelloImperfectRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Copse:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="preload" href="../assets/works/personal/blue.jpg" as="image">
     <link rel="preload" href="../assets/works/personal/zuko.jpg" as="image">
@@ -15,14 +14,13 @@
 <body class="illustrations-page">
     <header class="site-header">
         <div class="site-header-inner">
-            <a href="../index.html#landing" class="site-brand site-brand-link">creative portfolio</a>
             <nav class="top-nav" aria-label="Primary">
                 <a href="../index.html#landing" class="nav-link" data-nav="home">home</a>
                 <a href="../index.html#about" class="nav-link" data-nav="about">about</a>
                 <a href="../index.html#works" class="nav-link active" data-nav="works">work</a>
-                <a href="../index.html#contact" class="nav-link" data-nav="contact">contact</a>
+                <a href="#contact" class="nav-link" data-nav="contact">contact</a>
             </nav>
-            <p class="site-location"><img src="../assets/ui/location.png" alt="" aria-hidden="true">bangalore, india</p>
+            <a href="../index.html#landing" class="site-brand site-brand-link">creative portfolio</a>
         </div>
     </header>
 
@@ -31,7 +29,7 @@
         <section class="illustrations-section" id="illustrations">
             <div class="illustrations-wipe" aria-hidden="true"></div>
             
-            <header class="illustrations-header reveal-illustrations" style="opacity: 1; transform: translateY(0);">
+            <header class="illustrations-header reveal-illustrations">
                 <h1 class="illustrations-title">ILLUSTRATIONS</h1>
             </header>
 
@@ -69,6 +67,10 @@
                         <img src="../assets/works/personal/gartic dosts 2.png" alt="Gartic dosts illustration" loading="lazy" decoding="async">
                     </div>
                 </div>
+                
+                <p class="illustrations-instagram-link reveal-illustrations">
+                    check out my <a href="https://www.instagram.com/kiasartchive/" target="_blank" rel="noopener noreferrer">instagram</a> for more &lt;3
+                </p>
             </div>
         </section>
     <section class="contact-section" id="contact">
@@ -93,6 +95,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/illustrations.js"></script>
 </body>

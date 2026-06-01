@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setupTopNav();
     setupWorksHovers();
+    setupToggles();
+    setupCustomCursor();
 
     if (reducedMotion) {
         document.getElementById("loader")?.remove();
         revealStaticContent();
         startTypewriter(false);
         setupAboutReveal(false);
-        setupStripReveal(false);
         setupWorksReveal(false);
         return;
     }
@@ -17,7 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     await waitForCriticalFonts();
     runLoaderSequence(() => startTypewriter(true));
     setupAboutReveal(true);
-    setupStripReveal(true);
     setupWorksReveal(true);
     setupSectionTransitions();
 });
@@ -33,8 +33,11 @@ async function waitForCriticalFonts() {
 
 function runLoaderSequence(onComplete) {
     const loader = document.getElementById("loader");
+    const header = document.querySelector(".site-header");
+    
     if (!loader || typeof gsap === "undefined") {
         loader?.remove();
+        if (header) header.classList.add("visible");
         if (typeof onComplete === "function") {
             onComplete();
         }
@@ -47,9 +50,11 @@ function runLoaderSequence(onComplete) {
         .from(".loader-inner p", { y: 14, opacity: 0, duration: 0.45 }, "-=0.75")
         .to(loader, { opacity: 0, duration: 0.65, delay: 0.25 })
         .set(loader, { display: "none" })
-        .from(".site-header", { y: -16, opacity: 0, duration: 0.55 }, "-=0.2")
-        .from(".top-nav .nav-link", { y: 6, opacity: 0, stagger: 0.06, duration: 0.4 }, "-=0.35")
-        .from(".headline-top", { y: 26, opacity: 0, duration: 0.7 }, "-=0.45")
+        .add(() => {
+            // Show header after loader is hidden
+            if (header) header.classList.add("visible");
+        })
+        .from(".headline-top", { y: 26, opacity: 0, duration: 0.7 }, "-=0.2")
         .from(".headline-words", { y: 20, opacity: 0, duration: 0.7 }, "<")
         .from(".star", { scale: 0.6, opacity: 0, stagger: 0.07, duration: 0.65 }, "-=0.7")
         .add(() => {
@@ -144,7 +149,7 @@ function setupTopNav() {
             const navKey =
                 id === "landing"
                     ? "home"
-                    : id === "profile-strip"
+                    : id === "about"
                       ? "about"
                       : id;
 
@@ -385,4 +390,88 @@ function revealStaticContent() {
     document
         .querySelectorAll(".reveal-about, .reveal-strip, .reveal-works")
         .forEach((el) => el.classList.add("is-visible"));
+}
+
+function setupToggles() {
+    const tabs = document.querySelectorAll(".toggle-tab");
+    const panels = document.querySelectorAll(".toggle-panel");
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const targetTab = tab.dataset.tab;
+
+            // Remove active class from all tabs and panels
+            tabs.forEach((t) => t.classList.remove("active"));
+            panels.forEach((p) => p.classList.remove("active"));
+
+            // Add active class to clicked tab and corresponding panel
+            tab.classList.add("active");
+            const targetPanel = document.querySelector(`[data-panel="${targetTab}"]`);
+            if (targetPanel) {
+                targetPanel.classList.add("active");
+            }
+        });
+    });
+}
+
+function setupCustomCursor() {
+    // Create custom cursor element
+    const cursor = document.createElement("div");
+    cursor.className = "custom-cursor";
+    document.body.appendChild(cursor);
+
+    // Helper function to get computed background color from element or ancestors
+    function getBackgroundColor(el) {
+        let current = el;
+        while (current && current !== document.body) {
+            const bg = window.getComputedStyle(current).backgroundColor;
+            if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+                return bg;
+            }
+            current = current.parentElement;
+        }
+        return window.getComputedStyle(document.body).backgroundColor;
+    }
+
+    // Helper function to convert rgb/rgba to hex for comparison
+    function rgbToHex(rgb) {
+        const match = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+        if (!match) return null;
+        const hex = "#" + [parseInt(match[1]), parseInt(match[2]), parseInt(match[3])]
+            .map(x => x.toString(16).padStart(2, '0'))
+            .join('')
+            .toLowerCase();
+        return hex;
+    }
+
+    // Cursor movement and background color detection
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+
+        // Detect background color and change cursor accordingly
+        const element = document.elementFromPoint(e.clientX, e.clientY);
+        if (element) {
+            const bgColor = getBackgroundColor(element);
+            const hexColor = rgbToHex(bgColor);
+            
+            // Remove all color classes
+            cursor.classList.remove("on-blue-bg", "cursor-hover");
+            
+            // Only add class if background is blue - then cursor becomes pink
+            // Otherwise cursor stays default blue
+            if (hexColor) {
+                if (hexColor === "#84abcc" || hexColor === "#d4e8f7") {
+                    cursor.classList.add("on-blue-bg");
+                }
+            }
+        }
+    });
+
+    // Cursor hover effects
+    const interactiveElements = document.querySelectorAll("a, button, .illustration-item, .works-ref-item, .toggle-tab");
+    interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => cursor.classList.add("cursor-hover"));
+        el.addEventListener("mouseleave", () => cursor.classList.remove("cursor-hover"));
+    });
 }

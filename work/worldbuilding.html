@@ -6,21 +6,19 @@
     <title>Kshiraja | Worldbuilding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="../fonts/HelloImperfectRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Copse:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="worldbuilding-page">
     <header class="site-header">
         <div class="site-header-inner">
-            <a href="../index.html#landing" class="site-brand site-brand-link">creative portfolio</a>
             <nav class="top-nav" aria-label="Primary">
                 <a href="../index.html#landing" class="nav-link" data-nav="home">home</a>
                 <a href="../index.html#about" class="nav-link" data-nav="about">about</a>
                 <a href="../index.html#works" class="nav-link active" data-nav="works">work</a>
-                <a href="../index.html#contact" class="nav-link" data-nav="contact">contact</a>
+                <a href="#contact" class="nav-link" data-nav="contact">contact</a>
             </nav>
-            <p class="site-location"><img src="../assets/ui/location.png" alt="" aria-hidden="true">bangalore, india</p>
+            <a href="../index.html#landing" class="site-brand site-brand-link">creative portfolio</a>
         </div>
     </header>
 
@@ -29,19 +27,19 @@
         <section class="worldbuilding-section" id="worldbuilding">
             <div class="worldbuilding-wipe" aria-hidden="true"></div>
             
-            <header class="worldbuilding-header reveal-worldbuilding" style="opacity: 1; transform: translateY(0);">
-                <nav class="category-nav reveal-worldbuilding" style="opacity: 1; transform: translateY(0);">
+            <header class="worldbuilding-header reveal-worldbuilding">
+                <nav class="category-nav reveal-worldbuilding">
                     <span class="category-item active">character</span>
                     <a href="concept.html" class="category-item">concept</a>
-                    <a href="animation.html" class="category-item">animatic</a>
+                    <a href="animatic.html" class="category-item">animatic</a>
                 </nav>
                 
                                 <h1 class="worldbuilding-title">CHARACTER DESIGN</h1>
             </header>
 
             <div class="worldbuilding-content">
-                <div class="character-description reveal-worldbuilding" style="opacity: 1; transform: translateY(0);">
-                    <p>Raju, 36, is a self-proclaimed "retired" wellness enthusiast living off his son's Twitch earnings. Constantly drifting through spiritual phases, he ends up with an unlikely flamingo companion who quietly judges his lifestyle. The project follows their odd dynamic, blending humour with themes of escapism, self-delusion, and the search for balance.</p>
+                <div class="character-description reveal-worldbuilding">
+                    <p>raju, 36, is a self-proclaimed "retired" wellness enthusiast living off his son's twitch earnings. constantly drifting through spiritual phases, he ends up with an unlikely flamingo companion who quietly judges his lifestyle. the project follows their odd dynamic, blending humour with themes of escapism, self-delusion, and the search for balance.</p>
                 </div>
 
                 <div class="character-gallery reveal-worldbuilding">
@@ -98,6 +96,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/worldbuilding.js"></script>
 </body>

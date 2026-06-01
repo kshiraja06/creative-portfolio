@@ -14,14 +14,14 @@ portfolio/
 │   ├── lightbox.js     # Image lightbox (galleries)
 │   ├── worldbuilding.js
 │   ├── concept.js
-│   ├── animation.js
+│   ├── animatic.js
 │   ├── illustrations.js
 │   ├── interactions.js
 │   └── graphic-design.js
 ├── work/               # Project pages (opened from work folders)
 │   ├── worldbuilding.html
 │   ├── concept.html
-│   ├── animation.html
+│   ├── animatic.html
 │   ├── visual-design.html
 │   ├── graphic-design.html
 │   ├── illustrations.html

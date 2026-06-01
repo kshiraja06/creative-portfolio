@@ -6,8 +6,7 @@
     <title>Kshiraja | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="./fonts/HelloImperfectRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Copse:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,24 +19,23 @@
 
     <header class="site-header">
         <div class="site-header-inner">
-            <p class="site-brand">creative portfolio</p>
             <nav class="top-nav" aria-label="Primary">
                 <a href="#landing" class="nav-link active" data-nav="home">home</a>
                 <a href="#about" class="nav-link" data-nav="about">about</a>
                 <a href="#works" class="nav-link" data-nav="works">work</a>
                 <a href="#contact" class="nav-link" data-nav="contact">contact</a>
             </nav>
-            <p class="site-location"><img src="./assets/ui/location.png" alt="" aria-hidden="true">bangalore, india</p>
+            <p class="site-brand">creative portfolio</p>
         </div>
     </header>
 
     <main>
         <section class="landing page-section" id="landing">
             <div class="stars-layer" aria-hidden="true">
-                <img src="./assets/ui/star.png" alt="" class="star star-a star-green">
-                <img src="./assets/ui/star.png" alt="" class="star star-b">
-                <img src="./assets/ui/star.png" alt="" class="star star-c">
-                <img src="./assets/ui/star.png" alt="" class="star star-d star-green">
+                <img src="./assets/ui/star 2.png" alt="" class="star star-a">
+                <img src="./assets/ui/star 1.png" alt="" class="star star-b">
+                <img src="./assets/ui/star 1.png" alt="" class="star star-c">
+                <img src="./assets/ui/star 2.png" alt="" class="star star-d">
             </div>
 
             <div class="headline-wrap">
@@ -64,23 +62,53 @@
                         I like talking ideas through, collaborating with people,
                         and shaping playful visual systems that feel warm and alive.
                     </p>
-                </div>
-            </div>
-        </section>
 
-        <section class="profile-strip-section page-section" id="profile-strip">
-            <div class="profile-strip-content">
-                <div class="strip-copy strip-copy-left reveal-strip">
-                    <p class="strip-handle">@ srishti manipal</p>
-                    <p class="strip-subtext">2nd year, creative and applied computation</p>
-                </div>
-
-                <div class="strip-plate-wrap reveal-strip">
-                    <img src="./assets/ui/plate.png" alt="Decorative plate artwork with icons" class="strip-plate">
-                </div>
-
-                <div class="strip-copy strip-copy-right reveal-strip">
-                    <p class="strip-location"><img src="./assets/ui/location.png" alt="" aria-hidden="true">bangalore, india</p>
+                    <div class="about-toggles">
+                        <div class="toggle-tabs">
+                            <button class="toggle-tab active" data-tab="tools">tools</button>
+                            <button class="toggle-tab" data-tab="skills">skills</button>
+                            <button class="toggle-tab" data-tab="learning">learning</button>
+                            <button class="toggle-tab" data-tab="tabs">open tabs</button>
+                        </div>
+                        <div class="toggle-content">
+                            <div class="toggle-panel active" data-panel="tools">
+                                <ul class="toggle-list">
+                                    <li>krita</li>
+                                    <li>procreate</li>
+                                    <li>figma</li>
+                                    <li>cursor</li>
+                                    <li>claude</li>
+                                    <li>python</li>
+                                    <li>canva</li>
+                                </ul>
+                            </div>
+                            <div class="toggle-panel" data-panel="skills">
+                                <ul class="toggle-list">
+                                    <li>illustration</li>
+                                    <li>storytelling</li>
+                                    <li>research</li>
+                                    <li>prototyping</li>
+                                    <li>creative technology</li>
+                                    <li>systems</li>
+                                </ul>
+                            </div>
+                            <div class="toggle-panel" data-panel="learning">
+                                <ul class="toggle-list">
+                                    <li>illustrator</li>
+                                    <li>framer</li>
+                                    <li>content writing</li>
+                                    <li>always picking up new things!</li>
+                                </ul>
+                            </div>
+                            <div class="toggle-panel" data-panel="tabs">
+                                <ul class="toggle-list">
+                                    <li>youtube video essays</li>
+                                    <li>japanese packaging</li>
+                                    <li>calarts portfolios and films</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -95,7 +123,7 @@
                         </div>
                         <p class="works-folder-name">worldbuilding</p>
                     </a>
-                    <p class="works-folder-desc">Character design, concept art, and animatics for narrative projects.</p>
+                    <p class="works-folder-desc">character design, concept art, and animatics for narrative projects.</p>
                 </article>
                 <article class="works-folder-card reveal-works">
                     <a href="./work/visual-design.html" class="works-ref-item">
@@ -104,7 +132,7 @@
                         </div>
                         <p class="works-folder-name">visual design</p>
                     </a>
-                    <p class="works-folder-desc">Illustration and graphic design, from personal work to packaging.</p>
+                    <p class="works-folder-desc">illustration and graphic design, from personal work to packaging.</p>
                 </article>
                 <article class="works-folder-card reveal-works">
                     <a href="./work/interactions.html" class="works-ref-item">
@@ -113,7 +141,7 @@
                         </div>
                         <p class="works-folder-name">interaction</p>
                     </a>
-                    <p class="works-folder-desc">Interactive websites and small experimental projects.</p>
+                    <p class="works-folder-desc">interactive websites and small experimental projects.</p>
                 </article>
             </div>
         </section>
@@ -140,5 +168,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/page-transition.js"></script>
 </body>
 </html>

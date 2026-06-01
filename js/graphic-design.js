@@ -1,7 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     initializeCardsAnimation();
     setupPackagingLightbox();
+    setupGraphicDesignReveal();
 });
+
+function setupGraphicDesignReveal() {
+    const items = document.querySelectorAll(".reveal-graphic-design");
+    
+    if (!items.length) return;
+    
+    // Add is-visible class immediately for now since these are inner pages
+    items.forEach((item) => {
+        item.classList.add("is-visible");
+    });
+}
 
 function initializeCardsAnimation() {
     const cardsSpread = document.getElementById("cards-spread");
