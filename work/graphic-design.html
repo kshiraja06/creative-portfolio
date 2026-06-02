@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="graphic-design-page">
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-star">★</span>
+            <p>loading creative portfolio</p>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="site-header-inner">
             <nav class="top-nav" aria-label="Primary">
@@ -39,31 +46,16 @@
                 <!-- Cards Section -->
                 <div class="cards-section reveal-graphic-design">
                     <div class="cards-spread" id="cards-spread">
-                        <picture>
-                            <source srcset="../assets/works/graphic design/back 1-400.webp 400w, ../assets/works/graphic design/back 1-800.webp 800w" type="image/webp">
-                            <img src="../assets/works/graphic design/back 1.png" alt="Card back 1" class="card-back" data-index="0" width="400" height="600" loading="lazy" decoding="async">
-                        </picture>
-                        <picture>
-                            <source srcset="../assets/works/graphic design/back 2-400.webp 400w, ../assets/works/graphic design/back 2-800.webp 800w" type="image/webp">
-                            <img src="../assets/works/graphic design/back 2.png" alt="Card back 2" class="card-back" data-index="1" width="400" height="600" loading="lazy" decoding="async">
-                        </picture>
-                        <picture>
-                            <source srcset="../assets/works/graphic design/back 3-400.webp 400w, ../assets/works/graphic design/back 3-800.webp 800w" type="image/webp">
-                            <img src="../assets/works/graphic design/back 3.png" alt="Card back 3" class="card-back" data-index="2" width="400" height="600" loading="lazy" decoding="async">
-                        </picture>
-                        <picture>
-                            <source srcset="../assets/works/graphic design/back 4-400.webp 400w, ../assets/works/graphic design/back 4-800.webp 800w" type="image/webp">
-                            <img src="../assets/works/graphic design/back 4.png" alt="Card back 4" class="card-back" data-index="3" width="400" height="600" loading="lazy" decoding="async">
-                        </picture>
+                        <img src="../assets/works/graphic design/back 1.webp" alt="Card back 1" class="card-back" data-index="0">
+                        <img src="../assets/works/graphic design/back 2.webp" alt="Card back 2" class="card-back" data-index="1">
+                        <img src="../assets/works/graphic design/back 3.webp" alt="Card back 3" class="card-back" data-index="2">
+                        <img src="../assets/works/graphic design/back 4.webp" alt="Card back 4" class="card-back" data-index="3">
                     </div>
                 </div>
 
                 <!-- Packaging Design Section -->
                 <div class="packaging-section reveal-graphic-design">
-                    <picture>
-                        <source srcset="../assets/works/graphic design/packaging-400.webp 400w, ../assets/works/graphic design/packaging-800.webp 800w, ../assets/works/graphic design/packaging-1200.webp 1200w, ../assets/works/graphic design/packaging-1600.webp 1600w" type="image/webp">
-                        <img src="../assets/works/graphic design/packaging.png" alt="Packaging Design" class="packaging-image" id="packaging-img" width="800" height="800" loading="lazy" decoding="async" fetchpriority="high">
-                    </picture>
+                    <img src="../assets/works/graphic design/packaging.webp" alt="Packaging Design" class="packaging-image" id="packaging-img">
                 </div>
             </div>
         </section>
@@ -93,5 +85,6 @@
     <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/graphic-design.js"></script>
+    <script src="../js/work-loader.js"></script>
 </body>
 </html>

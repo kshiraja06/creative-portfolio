@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="visual-design-page">
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-star">★</span>
+            <p>loading creative portfolio</p>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="site-header-inner">
             <nav class="top-nav" aria-label="Primary">
@@ -39,28 +46,19 @@
                 <div class="design-categories">
                     <a href="graphic-design.html" class="design-category">
                         <div class="category-patch">
-                            <picture>
-                                <source srcset="../assets/ui/patch 1.webp" type="image/webp">
-                                <img src="../assets/ui/patch 1.png" alt="Graphic Design patch" width="200" height="200" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="../assets/ui/patch 1.webp" alt="Graphic Design patch">
                         </div>
                         <p>graphic design</p>
                     </a>
                     <a href="illustrations.html" class="design-category">
                         <div class="category-patch">
-                            <picture>
-                                <source srcset="../assets/ui/patch 2.webp" type="image/webp">
-                                <img src="../assets/ui/patch 2.png" alt="Illustrations patch" width="200" height="200" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="../assets/ui/patch 2.webp" alt="Illustrations patch">
                         </div>
                         <p>illustrations</p>
                     </a>
                     <a href="stars.html" class="design-category">
                         <div class="category-patch">
-                            <picture>
-                                <source srcset="../assets/ui/patch 3.webp" type="image/webp">
-                                <img src="../assets/ui/patch 3.png" alt="How Stars Are Born patch" width="200" height="200" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="../assets/ui/patch 3.webp" alt="How Stars Are Born patch">
                         </div>
                         <p>how stars are born</p>
                     </a>
@@ -91,5 +89,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="../js/nav.js"></script>
     <script src="../js/page-transition.js"></script>
+    <script src="../js/work-loader.js"></script>
 </body>
 </html>

@@ -11,8 +11,6 @@
   "keywords": ["portfolio", "artist", "2d-art", "animation", "game-art"],
   "author": "KAM",
   "license": "MIT",
-  "devDependencies": {
-    "sharp": "^0.33.2"
-  },
+  "devDependencies": {},
   "dependencies": {}
 }

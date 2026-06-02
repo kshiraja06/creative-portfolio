@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="worldbuilding-page">
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-star">★</span>
+            <p>loading creative portfolio</p>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="site-header-inner">
             <nav class="top-nav" aria-label="Primary">
@@ -44,52 +51,31 @@
 
                 <div class="character-gallery reveal-worldbuilding">
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/action poses-400.webp 400w, ../assets/works/character design/action poses-800.webp 800w, ../assets/works/character design/action poses-1200.webp 1200w, ../assets/works/character design/action poses-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/action poses.jpg" alt="Action poses" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/action poses.webp" alt="Action poses" loading="lazy" decoding="async">
                         <p>Action Poses</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/final turnaround-400.webp 400w, ../assets/works/character design/final turnaround-800.webp 800w, ../assets/works/character design/final turnaround-1200.webp 1200w, ../assets/works/character design/final turnaround-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/final turnaround.jpg" alt="Final turnaround" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/final turnaround.webp" alt="Final turnaround" loading="lazy" decoding="async">
                         <p>Final Turnaround</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/expression sheet-400.webp 400w, ../assets/works/character design/expression sheet-800.webp 800w, ../assets/works/character design/expression sheet-1200.webp 1200w, ../assets/works/character design/expression sheet-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/expression sheet.jpg" alt="Expression sheet" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/expression sheet.webp" alt="Expression sheet" loading="lazy" decoding="async">
                         <p>Expression Sheet</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/action poses flamingo-400.webp 400w, ../assets/works/character design/action poses flamingo-800.webp 800w, ../assets/works/character design/action poses flamingo-1200.webp 1200w, ../assets/works/character design/action poses flamingo-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/action poses flamingo.jpg" alt="Action poses flamingo" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/action poses flamingo.webp" alt="Action poses flamingo" loading="lazy" decoding="async">
                         <p>Flamingo Poses</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/flamingo turnaround-400.webp 400w, ../assets/works/character design/flamingo turnaround-800.webp 800w, ../assets/works/character design/flamingo turnaround-1200.webp 1200w, ../assets/works/character design/flamingo turnaround-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/flamingo turnaround.jpg" alt="Flamingo turnaround" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/flamingo turnaround.webp" alt="Flamingo turnaround" loading="lazy" decoding="async">
                         <p>Flamingo Turnaround</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/flamingo expressions-400.webp 400w, ../assets/works/character design/flamingo expressions-800.webp 800w, ../assets/works/character design/flamingo expressions-1200.webp 1200w, ../assets/works/character design/flamingo expressions-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/flamingo expressions.jpg" alt="Flamingo expressions" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/flamingo expressions.webp" alt="Flamingo expressions" loading="lazy" decoding="async">
                         <p>Flamingo Expressions</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/character design/poster-400.webp 400w, ../assets/works/character design/poster-800.webp 800w, ../assets/works/character design/poster-1200.webp 1200w, ../assets/works/character design/poster-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/character design/poster.jpg" alt="Character poster" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/character design/poster.webp" alt="Character poster" loading="lazy" decoding="async">
                         <p>Poster</p>
                     </div>
                 </div>
@@ -120,5 +106,6 @@
     <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/worldbuilding.js"></script>
+    <script src="../js/work-loader.js"></script>
 </body>
 </html>

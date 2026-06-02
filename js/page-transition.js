@@ -24,34 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function transitionToPage(url) {
-    if (typeof gsap === "undefined") {
-        window.location.href = url;
-        return;
-    }
-
-    // Create a fade overlay
-    const overlay = document.createElement("div");
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #000;
-        opacity: 0;
-        z-index: 10000;
-        pointer-events: none;
-    `;
-    document.body.appendChild(overlay);
-
-    // Quick fade to black and navigate
-    gsap.to(overlay, {
-        opacity: 0.5,
-        duration: 0.25,
-        ease: "power2.inOut",
-        onComplete: () => {
-            window.location.href = url;
-        }
-    });
+    window.location.href = url;
 }
 

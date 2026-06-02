@@ -8,10 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Copse:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="preload" href="../assets/works/personal/blue.webp" as="image" type="image/webp">
-    <link rel="preload" href="../assets/works/personal/zuko.webp" as="image" type="image/webp">
+    <link rel="preload" href="../assets/works/personal/blue.webp" as="image">
+    <link rel="preload" href="../assets/works/personal/zuko.webp" as="image">
 </head>
 <body class="illustrations-page">
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-star">★</span>
+            <p>loading creative portfolio</p>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="site-header-inner">
             <nav class="top-nav" aria-label="Primary">
@@ -36,56 +43,35 @@
             <div class="illustrations-content">
                 <!-- Eyes GIF at the top -->
                 <div class="eyes-feature reveal-illustrations">
-                    <video src="../assets/works/personal/eyes.mp4" alt="Eyes animation" class="eyes-gif" loop autoplay muted playsinline preload="metadata"></video>
+                    <video src="../assets/works/personal/eyes.mp4" alt="Eyes animation" class="eyes-gif" loop autoplay muted playsinline></video>
                 </div>
                 
                 <div class="illustrations-grid reveal-illustrations">
                     <!-- First row: blue > zuko > earrings -->
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/blue-400.webp 400w, ../assets/works/personal/blue-800.webp 800w, ../assets/works/personal/blue-1200.webp 1200w, ../assets/works/personal/blue-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/personal/blue.jpg" alt="Blue illustration" loading="lazy" decoding="async" width="800" height="800" fetchpriority="high">
-                        </picture>
+                        <img src="../assets/works/personal/blue.webp" alt="Blue illustration" loading="lazy" decoding="async">
                     </div>
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/zuko-400.webp 400w, ../assets/works/personal/zuko-800.webp 800w, ../assets/works/personal/zuko-1200.webp 1200w" type="image/webp">
-                            <img src="../assets/works/personal/zuko.jpg" alt="Zuko illustration" loading="lazy" decoding="async" width="800" height="800" fetchpriority="high">
-                        </picture>
+                        <img src="../assets/works/personal/zuko.webp" alt="Zuko illustration" loading="lazy" decoding="async">
                     </div>
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/earring-400.webp 400w, ../assets/works/personal/earring-800.webp 800w, ../assets/works/personal/earring-1200.webp 1200w, ../assets/works/personal/earring-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/personal/earring.jpg" alt="Earring illustration" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/personal/earring.webp" alt="Earring illustration" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Second row: horror > car > vent -->
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/horror poster-400.webp 400w, ../assets/works/personal/horror poster-800.webp 800w, ../assets/works/personal/horror poster-1200.webp 1200w, ../assets/works/personal/horror poster-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/personal/horror poster.jpg" alt="Horror poster illustration" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/personal/horror poster.webp" alt="Horror poster illustration" loading="lazy" decoding="async">
                     </div>
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/car poster-400.webp 400w, ../assets/works/personal/car poster-800.webp 800w, ../assets/works/personal/car poster-1200.webp 1200w, ../assets/works/personal/car poster-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/personal/car poster.jpg" alt="Car poster illustration" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/personal/car poster.webp" alt="Car poster illustration" loading="lazy" decoding="async">
                     </div>
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/vent-400.webp 400w, ../assets/works/personal/vent-800.webp 800w, ../assets/works/personal/vent-1200.webp 1200w, ../assets/works/personal/vent-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/personal/vent.jpg" alt="Vent illustration" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/personal/vent.webp" alt="Vent illustration" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Third row: gartic dosts alone -->
                     <div class="illustration-item">
-                        <picture>
-                            <source srcset="../assets/works/personal/gartic dosts 2-400.webp 400w, ../assets/works/personal/gartic dosts 2-800.webp 800w, ../assets/works/personal/gartic dosts 2-1200.webp 1200w, ../assets/works/personal/gartic dosts 2-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/personal/gartic dosts 2.png" alt="Gartic dosts illustration" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/personal/gartic dosts 2.webp" alt="Gartic dosts illustration" loading="lazy" decoding="async">
                     </div>
                 </div>
                 
@@ -119,5 +105,6 @@
     <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/illustrations.js"></script>
+    <script src="../js/work-loader.js"></script>
 </body>
 </html>

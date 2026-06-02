@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="concept-page">
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-star">★</span>
+            <p>loading creative portfolio</p>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="site-header-inner">
             <nav class="top-nav" aria-label="Primary">
@@ -44,24 +51,15 @@
 
                 <div class="concept-gallery reveal-concept">
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/concept art/city-400.webp 400w, ../assets/works/concept art/city-800.webp 800w, ../assets/works/concept art/city-1200.webp 1200w, ../assets/works/concept art/city-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/concept art/city.jpg" alt="City concept art" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/concept art/city.webp" alt="City concept art" loading="lazy" decoding="async">
                         <p>City</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/concept art/heaven-400.webp 400w, ../assets/works/concept art/heaven-800.webp 800w, ../assets/works/concept art/heaven-1200.webp 1200w, ../assets/works/concept art/heaven-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/concept art/heaven.jpg" alt="Heaven concept art" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/concept art/heaven.webp" alt="Heaven concept art" loading="lazy" decoding="async">
                         <p>Heaven</p>
                     </div>
                     <div class="gallery-item">
-                        <picture>
-                            <source srcset="../assets/works/concept art/take 3-400.webp 400w, ../assets/works/concept art/take 3-800.webp 800w, ../assets/works/concept art/take 3-1200.webp 1200w, ../assets/works/concept art/take 3-1600.webp 1600w" type="image/webp">
-                            <img src="../assets/works/concept art/take 3.jpg" alt="Take 3 concept art" loading="lazy" decoding="async" width="800" height="800">
-                        </picture>
+                        <img src="../assets/works/concept art/take 3.webp" alt="Take 3 concept art" loading="lazy" decoding="async">
                         <p>Take 3</p>
                     </div>
                 </div>
@@ -93,5 +91,6 @@
     <script src="../js/page-transition.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/concept.js"></script>
+    <script src="../js/work-loader.js"></script>
 </body>
 </html>
