@@ -3,7 +3,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dis
 
 document.addEventListener("DOMContentLoaded", () => {
     setupCustomCursor();
-    loadPDFPages();
+    // Don't auto-load PDFs - let work-loader handle it
+    window.loadStarsPDF = loadPDFPages;
 });
 
 async function loadPDFPages() {
@@ -39,10 +40,16 @@ async function loadPDFPages() {
             return wrapper;
         });
         
-        // Now render all pages (can render in parallel)
-        allPages.forEach((pageInfo, index) => {
-            renderPageAsync(pageInfo.pdf, pageInfo.pageNum, wrappers[index]);
-        });
+        // Render first 3 pages immediately for quick initial load
+        const initialPages = Math.min(3, allPages.length);
+        for (let i = 0; i < initialPages; i++) {
+            await renderPageAsync(allPages[i].pdf, allPages[i].pageNum, wrappers[i]);
+        }
+        
+        // Render remaining pages in background
+        for (let i = initialPages; i < allPages.length; i++) {
+            renderPageAsync(allPages[i].pdf, allPages[i].pageNum, wrappers[i]);
+        }
 
     } catch (error) {
         console.error("Error loading PDFs:", error);
@@ -61,7 +68,7 @@ async function loadPDFPages() {
 async function renderPageAsync(pdf, pageNum, wrapper) {
     try {
         const page = await pdf.getPage(pageNum);
-        const scale = 1.5;
+        const scale = 0.7; // Further reduced for faster loading
         const viewport = page.getViewport({ scale });
 
         const canvas = document.createElement("canvas");
