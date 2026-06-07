@@ -45,39 +45,6 @@ async function waitForImages() {
     });
 
     await Promise.all(imagePromises);
-
-    // Special handling for stars page with PDF rendering
-    if (document.body.classList.contains("stars-page")) {
-        await waitForPDFRendering();
-    }
-}
-
-async function waitForPDFRendering() {
-    // Trigger PDF loading if the function is available
-    if (typeof window.loadStarsPDF === "function") {
-        await window.loadStarsPDF();
-    }
-
-    const container = document.getElementById("pdf-container");
-    if (!container) return;
-
-    // Wait for at least 3 pages to render before showing content
-    const checkInterval = setInterval(() => {
-        const canvases = container.querySelectorAll("canvas.pdf-page");
-        
-        // Show content after at least 3 pages are rendered
-        if (canvases.length >= 3) {
-            clearInterval(checkInterval);
-        }
-    }, 100);
-
-    // Timeout after 5 seconds to prevent infinite wait
-    await new Promise(resolve => {
-        setTimeout(() => {
-            clearInterval(checkInterval);
-            resolve();
-        }, 5000);
-    });
 }
 
 function runLoaderSequence(onComplete) {

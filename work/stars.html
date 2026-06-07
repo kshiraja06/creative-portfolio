@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kshiraja | How Stars Are Born</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,13 +35,27 @@
                 <h1 class="stars-title">how stars are born!</h1>
             </header>
 
-            <div class="stars-content">
+            <div class="stars-content" style="max-width: 100%; overflow-x: hidden; width: 100%;">
                 <div class="project-description">
                     <p>a visualization of the first five pages of the little book of big history. this project exercised my skills on abstraction, visualization and decision making. we were tasked with selecting relevant information from the text and discarding what we deemed unnecessary. conceptualizing big (pun intended) topics in science to be understood by a layman, yet doing justice to the immensity of how marvelous these phenomenons are was a steep learning curve in this project.</p>
                 </div>
 
-                <div class="pdf-pages-container" id="pdf-container">
-                    <!-- PDF pages will be loaded here -->
+                <div class="stars-gallery">
+                    <div class="gallery-item">
+                        <img src="../assets/works/stars/1.webp" alt="Stars page 1" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../assets/works/stars/2.webp" alt="Stars page 2" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../assets/works/stars/3.webp" alt="Stars page 3" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../assets/works/stars/4.webp" alt="Stars page 4" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../assets/works/stars/5.webp" alt="Stars page 5" loading="lazy" decoding="async">
+                    </div>
                 </div>
             </div>
         </section>
@@ -66,10 +80,10 @@
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="../js/nav.js"></script>
     <script src="../js/page-transition.js"></script>
+    <script src="../js/lightbox.js"></script>
     <script src="../js/stars.js"></script>
     <script src="../js/work-loader.js"></script>
 </body>
